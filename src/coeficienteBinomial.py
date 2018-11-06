@@ -5,36 +5,20 @@
 # funcao fatorial
 #
 def fatorial(valor):
-    total = 1
+    valorFatorial = 1
     while (valor > 1):
-        total = total * valor
+        valorFatorial = valorFatorial * valor
         valor = valor - 1
-    return total
+    return valorFatorial
 
 # coleta de dados
 #
 valorN = int(input("Favor inserir o valor de N : "))
 valorK = int(input("Favor inserir o valor de K : "))
 
-# calcular o valor de (n-k)
-#
-valorNK = valorN - valorK
-
-# chamada da funcao fatorial
-#
-n = fatorial(valorN)
-k = fatorial(valorK)
-nk = fatorial(valorNK)
-
-# exibir os valores dos fatoriais
-#
-print("n! = ", n)
-print("k! = ", k)
-print("(n-k)! = ", nk)
-
 # calcular o polinomio
 #
-polinomio = n / (k * (nk))
+polinomio = fatorial(valorN) / (fatorial(valorK) * fatorial(valorN - valorK))
 
 # exibir o resultado
 #
