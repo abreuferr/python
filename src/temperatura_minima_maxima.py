@@ -23,18 +23,7 @@ def temperatura_minima(temps):
 #
 def testa_minima():
     print("iniciando os testes ")
-    temp = [0]
-    if temperatura_minima (temp) != 0: 
-        print("valor errado para o array ", temp)
     
-    temp = [0, 0, 0, 0, 0, 0]
-    if temperatura_minima (temp) != 0: 
-        print("valor errado para o array ", temp)
-    
-    temp = [0, 1, 2, 3, 4, 5, 6, 7]
-    if temperatura_minima (temp) != 0: 
-        print("valor errado para o array ", temp)
-
     temp = [31, 21, 12, -3, 24, 15, 11, 27]
     if temperatura_minima (temp) != -3: 
         print("valor errado para o array ", temp)
