@@ -41,3 +41,7 @@ print(temperaturaCelsius[3])
 print(temperaturaCelsius[-1])
 temperaturaCelsius[-1] = temperaturaCelsius[-1] + 3
 print(temperaturaCelsius[-1])
+
+print(temperaturaCelsius[2:5])
+print(temperaturaCelsius[0:4])
+print(temperaturaCelsius[:4])
