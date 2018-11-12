@@ -8,7 +8,7 @@ def minima_maxima(temperatura):
 
 # funcao utilizada para localizar a menor temperatura
 #
-def temperatura_minima(temps):
+def temperatura_minima(temp):
     temperatura_minima = 0
     contador = 0
     while contador < len(temp):
@@ -19,13 +19,13 @@ def temperatura_minima(temps):
     
     return temperatura_minima
 
-# funcao utilizada para testar a funcao minima
+# main()
 #
-def testa_minima():
-    print("iniciando os testes ")
-    
-    temp = [31, 21, 12, -3, 24, 15, 11, 27]
-    if temperatura_minima (temp) != -3: 
-        print("valor errado para o array ", temp)
+print("iniciando os testes ")
 
-    print("Finalizando os testes ")
+temp = [31, 21, 12, 3, 24, 15, 11, 27]
+
+if temperatura_minima(temp) != 3: 
+    print("valor errado para o array ", temp)
+
+print("Finalizando os testes ")
