@@ -9,12 +9,14 @@ def dimensoes(minha_matriz):
     # retorna os resultados
     return numero_linha, numero_coluna
 
-# dados a serem verificados
-minha_matriz = [[1, 2, 3], [4, 5, 6]]
+# main()
+if __name__ == '__main__':
+    # dados a serem verificados
+    minha_matriz = [[1, 2, 3], [4, 5, 6]]
 
-# chama a matriz para calcular o numero
-# de linha e coluna
-resultado = dimensoes(minha_matriz)
+    # chama a matriz para calcular o numero
+    # de linha e coluna
+    resultado = dimensoes(minha_matriz)
 
-# exibe o resultado das dimensoes da matriz
-print(resultado)
+    # exibe o resultado das dimensoes da matriz
+    print(resultado)
