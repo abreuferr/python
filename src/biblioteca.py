@@ -28,10 +28,10 @@ def cria_matriz(num_linhas, num_colunas, valor):
     # matriz vazia
     matriz = []
 
-    # criar uma matriz com num_linhas de tamanho
+    # cria uma matriz com num_linhas de tamanho
     for coordenada_i in range(num_linhas):
         
-        # matriz vazia
+        # cria matriz vazia
         linha = []
         
         # criar uma matriz com num_colunas de tamanho

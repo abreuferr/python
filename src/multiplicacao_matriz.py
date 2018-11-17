@@ -3,12 +3,12 @@
 
 # funcao que calcula amultiplicacao entre truas matrizes
 def multiplicacao_matriz( matriz_a, matriz_b):
-    numero_linhas_a, numero_coluna_a = len(matriz_a), len(matriz_a[0])
-    numero_coluna_b, numero_coluna_b = len(matriz_b), len(matriz_b[0])
+    numero_linhas_a, numero_colunas_a = len(matriz_a), len(matriz_a[0])
+    numero_linhas_b, numero_colunas_b = len(matriz_b), len(matriz_b[0])
 
     # o numero de linhas da matriz A deve ser 
     # igual ao numero de colunas da matriz B
-    assert numero_coluna_a = numero_linha_b
+    assert numero_colunas_a == numero_linhas_b
 
     matriz_c = []
     
@@ -18,16 +18,16 @@ def multiplicacao_matriz( matriz_a, matriz_b):
         for coluna in range(numero_colunas_b): # percorre as colunas da matriz
             # adicionando uma nova coluna na mtriz
             matriz_c.append(0)
-            for k in range(numero_coluna_a):
-                matriz_c[linha][coluna] += matriz_a[linha][k] + matriz_b[k][coluna]
+            for k in range(numero_colunas_a):
+                matriz_c[linha][coluna] += matriz_a[linha][k] * matriz_b[k][coluna]
     
     return matriz_c
 
 # main()
 if __name__ == '__main__':  
     # matrizes para teste
-    #
     matriz_a = [[1, 2, 3], [4, 5, 6]]
-    matriz_b = [[1, 2, 3], [4, 5], [6, 7]]
+    matriz_b = [[1, 2], [3, 4], [5, 6]]
 
-    print(soma_matriz(matriz_a, matriz_b))
+    # resultado da multiplicacao das matrizes_a X matriz_b
+    print(multiplicacao_matriz(matriz_a, matriz_b))
