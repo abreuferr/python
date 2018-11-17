@@ -31,3 +31,4 @@ if __name__ == '__main__':
 
     # resultado da multiplicacao das matrizes_a X matriz_b
     print(multiplicacao_matriz(matriz_a, matriz_b))
+    
