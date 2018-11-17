@@ -23,6 +23,7 @@ def multiplicacao_matriz( matriz_a, matriz_b):
     
     return matriz_c
 
+# main()
 if __name__ == '__main__':  
     # matrizes para teste
     #
