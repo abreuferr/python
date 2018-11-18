@@ -24,4 +24,4 @@ if __name__ == '__main__':
     valor_i, valor_j = resultado
 
     # exibe o resultado das dimensoes da matriz
-    print(valor_i, "X", valor_j)
+    print("{:d}X{:d}".format(valor_i, valor_j))
