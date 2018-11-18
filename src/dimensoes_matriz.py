@@ -2,9 +2,9 @@
 # DESCRIÇÃO  : funcao que define o tamanho de uma matriz
 
 # funcao para definir o tamanho da matriz
-def dimensoes(minha_matriz):
-    numero_linha = len(minha_matriz)
-    numero_coluna = len(minha_matriz[0])
+def dimensoes(matriz):
+    numero_linha = len(matriz)
+    numero_coluna = len(matriz[0])
 
     # retorna os resultados
     return numero_linha, numero_coluna
@@ -12,11 +12,16 @@ def dimensoes(minha_matriz):
 # main()
 if __name__ == '__main__':
     # dados a serem verificados
-    minha_matriz = [[1, 2, 3], [4, 5, 6]]
+    matriz = [[1, 2, 3], [4, 5, 6]]
 
     # chama a matriz para calcular o numero
     # de linha e coluna
-    resultado = dimensoes(minha_matriz)
+    resultado = dimensoes(matriz)
+
+    # a variavel resultado retorna com dois valores
+    # que sao armazenados nas variaveis valor_i e
+    # valor_j
+    valor_i, valor_j = resultado
 
     # exibe o resultado das dimensoes da matriz
-    print(resultado)
+    print(valor_i, "X", valor_j)
