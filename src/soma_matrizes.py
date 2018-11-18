@@ -21,7 +21,7 @@ def cria_matriz(num_linhas, num_colunas, valor):
     return matriz_c
 
 # funcao utilizada para calcular a soma das matrizes
-def soma_matriz( matriz_a, matriz_b):
+def soma_matrizes( matriz_a, matriz_b):
     numero_linhas = len(matriz_a) # numero de linhas da matriz_a
     numero_colunas = len(matriz_a[0]) # numero de colunas da matriz_a
 
@@ -40,4 +40,4 @@ if __name__ == '__main__':
     matriz_a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     matriz_b = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
-    print(soma_matriz(matriz_a, matriz_b))
+    print(soma_matrizes(matriz_a, matriz_b))
