@@ -12,7 +12,7 @@ def dimensoes(matriz):
 # main()
 if __name__ == '__main__':
     # dados a serem verificados
-    matriz = [[1, 2, 3], [4, 5, 6]]
+    matriz = [[1, 2], [3, 4]]
 
     # chama a matriz para calcular o numero
     # de linha e coluna
