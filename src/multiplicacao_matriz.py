@@ -39,11 +39,17 @@ if __name__ == '__main__':
 
     # o número de colunas da matriz_a deve ser igual ao número de linhas da matriz_b
     numero_linha_matriz_a, numero_coluna_matriz_a = dimensao(matriz_a)
+    numero_linha_matriz_b, numero_coluna_matriz_b = dimensao(matriz_b)
+    
 
     print(numero_linha_matriz_a)
     print(numero_coluna_matriz_a)
 
+    print(numero_linha_matriz_b)
+    print(numero_coluna_matriz_b)
+
+
     # numero_linha_matriz_b = dimensao(matriz_b)
 
     # resultado da multiplicacao das matrizes_a X matriz_b
-    print(multiplicacao_matriz(matriz_a, matriz_b))
+    #print(multiplicacao_matriz(matriz_a, matriz_b))
