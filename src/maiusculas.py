@@ -30,6 +30,7 @@ def maiusculas(frase):
     return caracteres_maiusculos
 
 # main()
+
 # atribui valor a variavel
 frase = "PrOgRaMaMoS em python!"
 
