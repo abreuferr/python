@@ -8,3 +8,5 @@ def soma(valorX, valorY):
     return valorSoma
 
 print(soma(10, 20))
+
+print(__name__) # exibe o nome da funcao
