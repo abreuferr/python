@@ -24,9 +24,23 @@ print(a) # exibindo o conteudo da variave a (20)
 print(b) # exibindo o conteudo da variavel b (10)
 
 a = 10 # atribuindo valor a uma variavel
-a += 10 # incrementando a variavel em 10
+a += 10 # incrementando a variavel em 10 (20)
+
+a = 10 # atribuindo valor a uma variavel
 a *= 2 # incrementa o valor da variavel em * 2 (20)
-a **=2 # **= representa elevado
+
+a = 10 # atribuindo valor a uma variavel
+a **=2 # **= representa elevado (1024)
+
+a = 10 # atribuindo valor a uma variavel
+a /= 2 # 10 / 2 = 5 
+
+a = 10 # atribuindo valor a uma variavel
+a //= 3 # 10 / 3 = 3
+
+a = 10 # atribuindo valor a uma variavel
+a %= 2 # resto - 10 / 2 = 5 e resto (0)
+
 print(a) # exibindo o conteudo da variavel a
 
 valor = pagamento_semanal(100, 36) # chamando funcao passando valores
