@@ -41,5 +41,7 @@ def conta_letras(frase, tipo = "vogais"):
 
 # main()
 conta_letras('programamos em python')# deve devolver 6
+
 conta_letras('programamos em python', 'vogais')# deve devolver 6
+
 conta_letras('programamos em python', 'consoantes')# deve devolver 13
