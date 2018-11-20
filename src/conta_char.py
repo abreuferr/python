@@ -15,7 +15,7 @@ para a função, deve-se assumir o valor "vogais" para o parâmetro.
 
 # funcao conta_letras
 def conta_letras(frase, tipo = "vogais"):
-    total = 0
+    total = 0 # variavel local
 
     # normalizando a frase
     frase_lower = frase.lower() # todos os caracteres em caixa baixa
