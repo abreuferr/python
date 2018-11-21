@@ -1,33 +1,29 @@
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
 # DESCRIÇÃO  : Esse programa tem como finalidade a de testar o Pytest
 
+import pytest
+
 # funcao fatorial
-#
-def fatorial(valor):
+def fatorial(numero):
     # verifica o numero a ser calculado
-    #
-    if valor < 0
+    if numero < 0:
         return 0
 
-    valorFatorial = 1
-    while (valor > 1):
-        valorFatorial = valorFatorial * valor
-        valor = valor - 1
-    return valorFatorial
+    valor = fat = 1
+
+    while (valor <= numero):
+        fat = fat * valor
+        valor -= 1
+    return fat
 
 # teste da funcao fatorial
-#
-def teste_fatorial0():
-    assert fatorial(0) == 1
 
-def teste_fatorial1():
-    assert fatorial(1) == 1
+@pytest.mark.parametrize("entrada, esperada", [
+    (0, 1),
+    (1, 1),
+    (-10, 0),
+    (4, 24),
+    ])
 
-def teste_fatorialNegativo():
-    assert fatorial(-10) == 0
-
-def teste_fatorial4():
-    assert fatorial(4) == 24
-
-def teste_fatorial5():
-    assert fatorial(5) == 120
+def testa_fatorial0(entrada, esperada):
+    assert fatorial(entrada) == esperada
