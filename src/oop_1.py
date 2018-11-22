@@ -1,6 +1,7 @@
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
 # DESCRIÇÃO  : estudo sobre OOP em Python - parte 1
 
+# classe carro que nao faz nada
 class carro:
     pass
 
@@ -25,6 +26,6 @@ seu_carro.cor = "amarelo"
 print(seu_carro.modelo)
 
 novo_fusca = meu_carro
-novo_fusca.ano += 10
+novo_fusca.ano += 10 # somando o valor 10 ao atributo ANO
 print(novo_fusca.ano)
 print(meu_carro.ano)
