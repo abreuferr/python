@@ -8,8 +8,11 @@ class carro:
         self.ano = ano
         self.cor = cor
 
-# objeto carro
-# atributos ferrari, 1980 e vermelho
+# objeto - carro
+# atributos - modelo, ano, cor 
+# dados - ferrari, 1980 e vermelho
 carro_do_meu_avo = carro("Ferrari", 1980, "vermelho")
 
+# exibir o conteudo "instancai.atributo" 
+# (carro_do_meu_avo.cor)
 print(carro_do_meu_avo.cor)
