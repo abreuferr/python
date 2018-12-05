@@ -1,5 +1,5 @@
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
-# DESCRIÇÃO  : estudo sobre OOP em Python - parte 3 - metodo __init__
+# DESCRICAO  : estudo sobre OOP em Python - parte 3 - metodo __init__
 
 # classe utilizada para testar o programa.
 def main():
