@@ -1,4 +1,4 @@
-# importar a classe Veiculo do arquivo veiculo.py
+# importar a classe Ponto do arquivo ponto.py
 from ponto import Ponto
 
 # importar a a funcao distancia do arquivo veiculo.py
