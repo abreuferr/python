@@ -6,12 +6,7 @@ def main():
 
     # chamando a classe Triangulo(a, b, c)
     # e armazenando na variavel "t"
-    t = Triangulo(3, 4, 5) 
-
-    # exibir os lados do triangulo
-    print(t.a())
-    print(t.b())
-    print(t.c())
+    t = Triangulo(3,4,5)
 
     # calcular o perimetro
     print(t.perimetro())
