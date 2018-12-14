@@ -51,7 +51,6 @@ def partida():
 #
 # main()
 #
-
 # tipo de partida
 escolha = int(input("Bem-vindo ao jogo do NIM! - Escolha !\n"
                     "1 - para jogar uma partida isolada\n"
