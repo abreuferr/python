@@ -4,18 +4,17 @@
 
 # funcao primo
 #
-def n_primo(limite):
+def n_primos(limite):
     # inicializando variavel
-    numero = 2
-    total_primo = 0
+    numero = 1
+    total_primos = 0
     # verificar se o numero eh primo ou nao
     while numero <= limite:
         if primo(numero):
-            total_primo += 1
+            total_primos += 1
         numero += 1
     # retornar com o total de numeros primos
-    print(total_primo)
-    return total_primo
+    return total_primos
 
 # verificar se o numero eh primo ou nao
 def primo(numero):
@@ -30,5 +29,4 @@ def primo(numero):
 
 # main()
 limite = int(input("limite maximo : "))
-n_primos = n_primo(limite)
-print("o numero de primos nesse intervalo é de: ", n_primo)
+n_primos(limite)
