@@ -4,7 +4,7 @@
 # imprimir texto no terminal
 print("hello world !!!")
 
-# criar a variavel "texto" do tipo string e definir o seu conteudo.
+# definir variavel
 texto = "hello world !!!"
-# imprimir o conteudo da variavel.
+# imprimir varaivel
 print(texto)
