@@ -1,5 +1,5 @@
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
-# DESCRICAO  : estudo sobre OOP em Python
+# DESCRICAO  : estudo sobre OOP em Python - livro sobre Python
 
 # metodo main()
 def main():
