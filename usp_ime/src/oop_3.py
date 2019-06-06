@@ -17,12 +17,12 @@ def main():
 # definicao da classe Carro
 class Carro:
     # metodo __init__()
-    def __init__(self, modelo, ano, cor, vel_max):
+    def __init__(self, modelo, ano, cor, vm):
         self.modelo  = modelo
         self.ano     = ano
         self.cor     = cor
         self.vel     = 0
-        self.vel_max = vel_max  # velocidade maxima
+        self.vel_max = vm  # velocidade maxima
 
     # metodo imprima()
     def imprima(self):
@@ -34,8 +34,8 @@ class Carro:
             print( "%s %s indo muito rapido!"%(self.modelo, self.cor))
 
     # metodo acelere()
-    def acelere(self, v):
-        self.vel_atual = v
+    def acelere(self, velocidade):
+        self.vel_atual = velocidade
         if self.vel_atual > self.vel_max:
             self.vel_atual = self.vel_max
         self.imprima()

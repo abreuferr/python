@@ -3,24 +3,26 @@
 
 # classe "carro" que nao faz nada
 class carro:
+
     pass
 
-# duas instancias/variaveis(meu_carro e seu_carro) 
+# foram criados duas instancias, meu_carro e seu_carro, 
 # do objeto carro()
 meu_carro = carro()
 seu_carro = carro()
 
-# tres atributos(ano/modelo/cor) e foi adicionado 
-# dados a esses tres atributos(1968/fusca/azul) 
+# foram definidos valores aos tres atributos. 
 # instancia.atributo = dado 
 meu_carro.ano = 1968
 meu_carro.modelo = "fusca"
 meu_carro.cor = "azul"
-print(meu_carro.ano) # 
+
+print(meu_carro.ano)
+print(meu_carro.modelo)
 print(meu_carro.cor)
 
-# tres atributos(ano/modelo/cor) e foi adicionado 
-# dados a esses tres atributos(1991/brasilia/amarelo)
+# tres atributos e foi adicionado 
+# dados a esses tres atributos.
 #  
 # instancia.atributo = dado 
 seu_carro.ano = 1981
@@ -35,10 +37,13 @@ novo_fusca = meu_carro
 
 # somando o valor 10 ao atributo ANO da variavel
 # novo_fusca
-novo_fusca.ano += 10 
-print(novo_fusca.ano) # 1968 para 1978
+# 1968 para 1978
+novo_fusca.ano += 10
+print(novo_fusca.ano)
+
 # como meu_carro e novo_fusca estao apontando para
 # o mesmo objeto (carro), entao, meu_carro.ano e 
 # novo_fusca serao acrescidos em 10 nos seus respectivos
 # valores.
-print(meu_carro.ano) # 1981 para 1991
+# 1981 para 1991
+print(meu_carro.ano)
