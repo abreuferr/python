@@ -2,17 +2,15 @@
 # DESCRIÇÃO  : estudo sobre OOP em Python - parte 1
 
 # classe "carro" que nao faz nada
-class carro:
+class Carro:
 
     pass
 
-# foram criados duas instancias, meu_carro e seu_carro, 
-# do objeto carro()
-meu_carro = carro()
-seu_carro = carro()
+# nome_da_instancia = nome_do_objeto()
+meu_carro = Carro()
+seu_carro = Carro()
 
-# foram definidos valores aos tres atributos. 
-# instancia.atributo = dado 
+# nome_do_objeto.nome_do_atributo = valor_do_atributo
 meu_carro.ano = 1968
 meu_carro.modelo = "fusca"
 meu_carro.cor = "azul"
@@ -21,10 +19,7 @@ print(meu_carro.ano)
 print(meu_carro.modelo)
 print(meu_carro.cor)
 
-# tres atributos e foi adicionado 
-# dados a esses tres atributos.
-#  
-# instancia.atributo = dado 
+# nome_do_objeto.nome_do_atributo = valor_do_atributo
 seu_carro.ano = 1981
 seu_carro.modelo = "brasilia"
 seu_carro.cor = "amarelo"

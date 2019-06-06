@@ -1,13 +1,14 @@
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
 # DESCRICAO  : estudo sobre OOP em Python - parte 3 - metodo __init__
 
-# classe utilizada para testar o programa.
+# metodo main()
 def main():
-    # carro1 e carro2 sao instancias que assumem o conteudo do
-    # objeto carro e cujos parametros estao dentro do ()
-    carro1 = Carro('brasilia', 1968, 'amarela', 80) # objeto(parametros)
-    carro2 = Carro('fuscao', 1981, 'preto', 95) # objeto(parametros)
+    # nome_da_instancia = nome_do_objeto(valor_atributo1, valor_atributo2)
+    carro1 = Carro('brasilia', 1968, 'amarela', 80)
+    carro2 = Carro('fuscao', 1981, 'preto', 95)
 
+    # chamada de um metodo.
+    # nome_da_instancia.nome_do_metodo(valor_atribuido)
     carro1.acelere(40)
     carro2.acelere(50)
     carro1.acelere(80)
@@ -18,28 +19,28 @@ def main():
 class Carro:
     # metodo __init__()
     def __init__(self, modelo, ano, cor, vm):
-        self.modelo  = modelo
-        self.ano     = ano
-        self.cor     = cor
-        self.vel     = 0
-        self.vel_max = vm  # velocidade maxima
+        self.modelo = modelo
+        self.ano    = ano
+        self.cor    = cor
+        self.vel    = 0
+        self.vel_max   = vm  # velocidade maxima
 
     # metodo imprima()
     def imprima(self):
-        if self.vel_atual == 0: # velocidade atual eh IGUAL a zero
+        if self.vel == 0: # parado da para ver o ano
             print( "%s %s %d"%(self.modelo, self.cor, self.ano)     )
-        elif self.vel_atual < self.vel_max: # velocidade atual eh MENOR que a maxima
+        elif self.vel < self.vel_max:
             print( "%s %s indo a %d Km/h"%(self.modelo, self.cor, self.vel) )
-        else: # velocidade atual eh MAIOR que a maxima
-            print( "%s %s indo muito rapido!"%(self.modelo, self.cor))
+        else:
+            print( "%s %s indo muito rapido !"%(self.modelo, self.cor))
 
     # metodo acelere()
-    def acelere(self, velocidade):
-        self.vel_atual = velocidade
-        if self.vel_atual > self.vel_max:
-            self.vel_atual = self.vel_max
+    def acelere(self, vel_atual):
+        self.vel = vel_atual
+        if self.vel > self.vel_max:
+            self.vel = self.vel_max
         self.imprima()
-    
+
     # metodo pare()
     def pare(self):
         self.vel = 0

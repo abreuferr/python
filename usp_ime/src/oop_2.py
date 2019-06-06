@@ -16,9 +16,11 @@ class Carro:
 
 # objeto - carro
 # atributos - modelo, ano, cor 
-# dados - ferrari, 1980 e vermelho
-carro_do_meu_avo = Carro("Ferrari", 1980, "vermelho")
+# dados - 'Brasilia', 1968, 'amarela'
+carro_do_meu_avo = Carro('Brasilia', 1968, 'amarela')
+carro_do_meu_primo = Carro('Fusca', 1981, 'preto')
 
-# exibir o conteudo "instancai.atributo" 
-# (carro_do_meu_avo.cor)
+# exibir o conteudo "instancia.atributo" 
+# nome_do_objeto.nome_do_atributo
 print(carro_do_meu_avo.cor)
+print(carro_do_meu_primo.ano)
