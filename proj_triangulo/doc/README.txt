@@ -1,8 +1,8 @@
 Exercicio do curso de programacao Python da USP - Introdução à Ciência da Computação com Python Parte 2
 
-Tarefa de programação: Lista de exercícios - 3
-
 https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2/programming/Y0235/lista-de-exercicios-3
+
+Tarefa de programação: Lista de exercícios - 3
 
 ### Exercício 1: Uma classe para triângulos ###
     Defina a classe Triangulo cujo construtor recebe 3 valores inteiros 
