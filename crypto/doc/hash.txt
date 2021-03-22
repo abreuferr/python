@@ -1,0 +1,4 @@
+Na criptografia, as funções hash transformam dados de entrada de tamanho arbitrário (por exemplo, uma mensagem de texto)
+em um resultado de tamanho fixo (por exemplo, 256 bits), que é chamado de valor hash (ou código hash, resumo da mensagem/digest
+ou simplesmente hash). As funções de hash (algoritmos de hash) usadas na criptografia de computador são conhecidas como "funções 
+de hash criptográficas". Exemplos de tais funções são SHA-256 e SHA3-256, que transformam a entrada arbitrária em saída de 256 bits.

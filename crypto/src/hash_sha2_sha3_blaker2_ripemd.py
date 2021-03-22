@@ -7,7 +7,9 @@ data = text.encode("utf8")  # codificando o texto no formato utf8
 
 # gerando o hash sha256
 sha256hash = hashlib.sha256(data).digest()
-# exibindo o resultado em formato hexadecimal.
+
+# o resultado será convertido de uma sequencia de bytes
+# para uma sequencia de caracteres hexadecimal. 
 print("SHA-256:   ", binascii.hexlify(sha256hash))
 
 sha3_256 = hashlib.sha3_256(data).digest()
