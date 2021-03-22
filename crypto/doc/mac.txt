@@ -1,0 +1,47 @@
+MAC - message authentication code
+HMAC - hash-based message authentication code
+
+os algoritmos MAC são conhecidos como "função hash com chave, porque ser
+comportam como uma função hash com uma chave.
+
+auth_code = MAC(key, msg)
+
+32885b49c8a1009e6d66662f8462e7dd5df769a7b725d1d546574e6d5d6e76ad = HMAC-SHA256('key', 'some msg')
+
+# CENARIO DE UTILIZACAO DO MAC
+
+1 - duas partes trocam uma certa chaves de criptgorafia, MAC key.
+
+2 - o emissor gera o MAC utilizando a mensagem e a chave secreta.
+    MAC1 = MAC Algorithm(secret key, message)
+
+3 - o emissor envia a mensagem e o MAC para o receptor.
+
+4 - em posse da mensagem e do MAC1, o receptor gera novamente o MAC2 da mensagem.
+    Visto que ele possui a mensagem e a chave secreta trocada entre ambos.
+    Se por acaso o MAC1 for igual ao MAC2, isso indica que a mensagem não foi
+    alterada durante a troca.
+
+# AUTENTICANDO UMA MENSAGEM CRIPTOGRAFADA/DESCRIPTOGRAFADA UTILIZANDO MAC
+
+1 - primeiro, derivar uma chave baseado na senha;
+2 - criptografar a mensagem utilizando a derivada da chave;
+3 - finalmente, calcular o MAC utilizando a derivada da chave e amensagem 
+    original
+
+5 - primeiro, descriptografar a mensagem utilizando a derivada derivada baseada
+    na senha;
+6 - proximo, descriptografar a mensagem com a chave derivada. DEsta forma, teremos
+    a menagem original;
+7 - finalemnte, nós calculamos o MAC utilizando a chave derivada e a mensagem descriptografada.
+
+# HMAC
+
+​HMAC = Hash-based Message Authentication Code
+
+HMAC(key, msg, hash_func) -> hash
+
+# Key Derivation Functions (KDF)
+
+KDF = HMAC(salt, msg, SHA256)
+
