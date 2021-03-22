@@ -1,0 +1,12 @@
+# PBKDF2
+
+PBKDF2 é um algoritmo utilizado para derivar uma chave criptografica. Essa chave
+é resistente ao ataque de discionário e rainbow table. Esse algoritmo é baseado
+na derivação interativa do HMAC muitas vezes com alguns preenchimentos.
+
+key = pbkdf2(password, salt, iterations-count, hash-function, derived-key-len)
+
+password = qwerty
+salt = alguns números gerados de forma randômica
+iterations-count = quantidades de interação
+hash-function = utilizado para calcular o hmac, como por exemplo, SHA256
