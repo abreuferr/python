@@ -1,12 +1,24 @@
 MAC - message authentication code
 HMAC - hash-based message authentication code
 
-os algoritmos MAC são conhecidos como "função hash com chave, porque ser
-comportam como uma função hash com uma chave.
+#
+# MAC
+#
+
+os algoritmos MAC são conhecidos como "função hash com chave, porque se
+comportam como uma função hash com uma chave. Qualquer alteração na mensagem,
+resulta em um valor do MAC diferente.
 
 auth_code = MAC(key, msg)
 
-32885b49c8a1009e6d66662f8462e7dd5df769a7b725d1d546574e6d5d6e76ad = HMAC-SHA256('key', 'some msg')
+# Exemplo, HMAC-256
+HMAC-SHA256('chave', 'texto') = 32885b49c8a1009e6d66662f8462e7dd5df769a7b725d1d546574e6d5d6e76ad
+
+O codigo MAC é utilizado como autenticador digital, como por exemplo, assinatura digital. Para que
+o MAC seja utilizado, eh necessário que ambas as partes troquem uma chave de forma segura.
+
+# exemplos de algoritmos MAC
+HMAC-SHA256, Keccak-based MAC
 
 # CENARIO DE UTILIZACAO DO MAC
 
@@ -35,13 +47,29 @@ auth_code = MAC(key, msg)
     a menagem original;
 7 - finalemnte, nós calculamos o MAC utilizando a chave derivada e a mensagem descriptografada.
 
+#
+# MAC-Based Pseudo-Random Generator
+#
+
+Outra aplicação do MAC é a geração de número pseudo-aleatório. Para isso, será utilizado
+os valores salt e seed.
+
+next_seed = MAC(salt, seed)
+
+#
 # HMAC
+#
 
 ​HMAC = Hash-based Message Authentication Code
 
-HMAC(key, msg, hash_func) -> hash
+HMAC é utilizado para garantir a autenticidade e integridade da mensagem.
+
+hash = HMAC(key, msg, hash_func)
+Como é utilizado uma chave secreta, o hash resultante possui as propriedades de
+irrervisibilidade e resistente a colisão.
+
+exemplos de hash_func = SHA-256, SHA-512, RIPEMD-160, SHA3-256 ou BLAKE2s
 
 # Key Derivation Functions (KDF)
 
 KDF = HMAC(salt, msg, SHA256)
-
