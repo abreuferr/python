@@ -1,0 +1,14 @@
+#
+# Diffie–Hellman Key Exchange (DHKE)
+#
+
+- protocolo uutilizado para trocar chaves de criptografia de forma segura.
+
+- resistente ao ataque de interceptação de comunicação
+
+- vulneravel ao ataque de man-in-the-middle
+
+- Diffie–Hellman key exchange (DHКЕ)
+
+- Elliptic-curve Diffie–Hellman (ECDH)
+
