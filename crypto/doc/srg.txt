@@ -1,0 +1,13 @@
+# SRG - Secure Random Generators
+
+# geração de número pseudo-aleatório
+
+# PRNG - pseudo-random numbers generators
+
+# CSPRNG - secure pseudo-random generators
+
+- CSPRNG é um PRNG que pode ser utilizado em criptografia.
+
+- CSPRNG baseada em cifra de bloco ou cifra de stream ou em
+uma função de hash segura.
+
