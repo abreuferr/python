@@ -7,6 +7,7 @@
 # imprtando bibliotecas
 import argon2, binascii
 
+# calcular o raw hash da senha
 hash = argon2.hash_password_raw(
     time_cost=16, memory_cost=2**15, parallelism=2, hash_len=32,
     password=b'password', salt=b'some salt', type=argon2.low_level.Type.ID)
