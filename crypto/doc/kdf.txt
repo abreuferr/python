@@ -1,0 +1,68 @@
+#
+# Key Derivation Functions (KDF)
+#
+
+Key derivation function (KDF) eh uma funcao que transforma uma variavel cujo tamanho nao
+possui um valor fixo, como por exemplo, a senha em uma sequencia de tamanho fixo.
+
+uma foram de aplicar a funcao KDF sobre a senha eh a utilizacao do algoritmo HSA-256. Nao
+eh aconselhavel adotar esse algoritmo pois o SHA256 eh sucetivel ao ataque de discionário.
+
+uma forma mais eficiente de se utilizar KDF é a utilização do algoritmo HMAC, HMAC(salt,msg,SHA256).
+
+Mais seguro que o HMAC, os algoritmos PBKDF2, Bcrypt, Scrypt e Argon2 podem ser utilizados.
+
+#
+# PBKDF2
+#
+
+- PBKDF2 é um algoritmo utilizado para derivar uma chave criptografica. Essa chave
+é resistente ao ataque de dicionário e rainbow table. Esse algoritmo é baseado
+na derivação interativa do HMAC muitas vezes com alguns preenchimentos.
+
+- key = pbkdf2(password, salt, iterations-count, hash-function, derived-key-len)
+    - password = array de bites/string
+    - salt = sequencia aleatória de bytes
+    - iterations-count = número de interações
+    - hash-function = função hash, SHA256
+    - derived-key-len = tamanho da chave resultante
+
+- algoritmo é resistente a ataques do tipo dicionário e rainbow table.
+
+- o algoritmo não é resistente a ataque do tipo GPU e ASIC
+
+#
+# Scrypt
+#
+
+- descrição do algoritmo - RFC 7914
+
+- algoritmo resistente a ataques do tipo GPU, ASIC e FGPA
+
+- key = Scrypt(password, salt, N, r, p, derived-key-len)
+    password = senha
+    salt = um PRNG de no mínimo 64 bits e recomendado 128 bits
+    N = número de interações, afeta memória e cpu - 16384 interações
+    r = tamanho do bloco - afeta memória e cpu
+    p = paralelismo - afeta memória e cpu
+    derived-key-len = tamanho da chave resultante do processo de derivação - 32 bytes/256 bits
+
+#
+# Bcrypt
+#
+
+- menos resistente a ataques do tipo ASIC e GPU
+
+#
+# Argon2
+#
+
+- resistete a ataques do tipo GPU e ASIC
+
+- o algoritmo Argon2 necessita dos seguintes parâmetros
+        P = senha
+        S = salt - número pseudo-aleatório - tamanho recomendado de 16 bytes\
+        t = iterations - número de interações
+        m = memorySizeKB - quantidade de memória a ser utilizada
+        p = parallelism - número de threads a ser utilizada
+        T = outputKeyLength - tamanho da chave resultante

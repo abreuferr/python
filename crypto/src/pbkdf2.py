@@ -1,3 +1,9 @@
+# antes de executar o código abaixo, é necessário importar
+# o pacote backports.pbkdf2 no python. para isso, basta
+# executar o comando abaixo.
+#
+# pip install backports.pbkdf2
+
 # importando biblioteca
 import os, binascii
 
@@ -12,5 +18,5 @@ passwd = "p@$Sw0rD~1".encode("utf8")
 # key = pbkdf2_hmac(hash function, password, salt, interactions, key lenght)
 key = pbkdf2_hmac("sha256", passwd, salt, 5000, 32)
 
-#exibindo a derivada da chave
+# exibindo a derivada da chave
 print("Derived key:", binascii.hexlify(key))

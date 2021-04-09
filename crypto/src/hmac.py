@@ -6,7 +6,7 @@ import hashlib, hmac, binascii
 def hmac_sha256(key, msg):
   return hmac.new(key, msg, hashlib.sha256).digest()
 
-# chave utilizada pelo hmaca
+# chave utilizada pelo hmac
 key = b"12345"
 
 # mensagem que sera crida o hmac
