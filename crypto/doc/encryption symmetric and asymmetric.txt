@@ -1,0 +1,25 @@
+#
+# Modern Assymmetric Encryption Algorithms
+#
+
+- RSA (Rivest–Shamir–Adleman), ECC (elliptic curve cryptography), Diffie-Hellman, 
+ECDH, ECDSA e EdDSA
+
+- chave publica criptografa os dados
+- chave privada descriptografa os dados
+
+# Digital Signatures: Asymmetric Signing / Verification
+
+- chave publica descriptografa os dados
+- chave privada criptografa os dados
+
+- Elliptic-Curve Cryptography (ECC) - a chave publica pode ser calculada a partir
+da chave privada.
+
+- RSA - ambas as chaves são calculadas de forma independente.
+
+#
+# Modern Symmetric Encryption Algorithms
+#
+
+- AES (AES-128, AES-192, AES-256), ChaCha20, Twofish, IDEA, Serpent, Camelia
