@@ -1,4 +1,10 @@
 #
+# Modern Symmetric Encryption Algorithms
+#
+
+- AES (AES-128, AES-192, AES-256), ChaCha20, Twofish, IDEA, Serpent, Camelia
+
+#
 # Modern Assymmetric Encryption Algorithms
 #
 
@@ -19,7 +25,44 @@ da chave privada.
 - RSA - ambas as chaves são calculadas de forma independente.
 
 #
-# Modern Symmetric Encryption Algorithms
+# RSA
 #
 
-- AES (AES-128, AES-192, AES-256), ChaCha20, Twofish, IDEA, Serpent, Camelia
+- par de chaves - chave publica e chave privada
+- mensagem a ser criptografada
+- assinatura digital
+- troca de chaves
+
+# geracao das chaves
+    - (me)d ≡ m (mod n)
+        - {p,q} = dois numeros primos grandes
+        - n = modulus - n = p.q = tamanho da chave rsa - 2048 bits
+        - par {n, e} = chave publica
+        - e = expoente da chave publica - 65537 (0x010001)
+        - para {n, d} = chave privada
+        - d = expoente da chave privada - 2048 bits
+
+# criptografia
+    - encryptedMsg = (msg)e mod n
+
+# descriptografia
+    - decryptedMsg = (encryptedMsg)d mod n
+    - decryptedMsg = (encryptedMsg)d mod n = ((msg)e mod n)d = ((msg)e)d mod n = (msg) mod n = msg
+
+D(d,E(e,m))=m : descriptografa a msg utilizando a chave privada somente se a msg foi criptografada com a chave publica 
+D(e,E(d,m))=m : descriptografa a msg utilizando a chave publica somente se a msg foi criptografada com a chave privada
+
+# exemplo
+    msg = 83
+
+    modulus n = 143
+    public exponent e = 7
+    private exponent d = 103
+    public key = {n, e} = {143, 7}
+    private key = {n, d} = {143, 103}
+
+    Encryption (With Public Key): E(e,m) = mˆe mod n = c
+    - encryptedMsg = msgˆe mod n = 83ˆ7 mod 143 = 27136050989627 mod 143 = 8
+
+    Decryption (With Private Key): D(d,c) = cˆd mod n = m
+    - decryptedMsg = encryptedMsgˆd mod n = 8ˆ103 mod 143 = 1042962419883256876169444192465601618458351817556959360325703910069443225478828393565899456512 mod 143 = 83
