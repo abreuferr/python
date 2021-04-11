@@ -33,7 +33,7 @@ encryptedMsg = encrypt_AES_GCM(msg, secretKey)
 print("encryptedMsg", {
     'ciphertext': binascii.hexlify(encryptedMsg[0]), # string criptografada
     'aesIV': binascii.hexlify(encryptedMsg[1]), # vetor de inicializacao de 128 bits, 32 hex
-    'authTag': binascii.hexlify(encryptedMsg[2]) # MAC - message authentication code
+    'authTag': binascii.hexlify(encryptedMsg[2]) # MAC - message authentication code de 128 bits, 32 hex
 })
 
 # chamada da funcao que ira descriptografar a string
