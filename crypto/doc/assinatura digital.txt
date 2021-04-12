@@ -27,3 +27,22 @@ chave privada {n, d}
 - o destinatario gera o hash da mesma mensagem : h = hash(msg)
 - o destinatario descriptografa a assinatura da mensagem com a chave pública : h' = s^e (mod n)
 - o destinatário compara o hash gerado com o hash descriptografado : h == h' ?
+
+#
+# ECDSA: Elliptic Curve Digital Signature Algorithm
+#
+
+# geracao das chaves
+
+- chave privada (integer): privKey
+- chave publica (EC point): pubKey = privKey * G
+
+#
+# assinatura
+#
+
+- calcular o hash da mensagem : h = hash(msg)
+- gerar um número randômico k de forma segura
+- calcular de forma randômica o ponto R = k * G e obter a coordenada x : r = R.x
+- calcular a assinatura : s = k ^ −1 ∗ (h + r * privKey) (mod n)
+- retorna a assinatura {r, s}
