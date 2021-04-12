@@ -1,0 +1,29 @@
+#
+# Digital Signatures
+#
+
+- a assinatura digital prove
+    - autenticidade
+    - integridade
+    - não-reputação
+
+- assinatura digital utiliza o esquema de chave pública, RSA
+e ECC, e o par de chaves píblica/privada.
+
+- para gerar a assinatura, é utilizada a chave privada - signature = signMsg(msg, privKey) 
+- para checar a autenticidade, é utilizada a chave pública - valid/invalid = verifyMsgSignature(msg, signature, pubKey) 
+
+- algoritmos utilizados : DSA, ECDSA, EdDSA, RSA, ElGamal e Schnorr.
+
+#
+# RSA
+#
+
+chave pública {n, e}
+chave privada {n, d}
+
+- o remetente gera o hash da mensagem que será assinada digitalmente : h = hash(msg)
+- o remetente criptografa o hash resultante com a chave privada : s = hˆd (mod n)
+- o destinatario gera o hash da mesma mensagem : h = hash(msg)
+- o destinatario descriptografa a assinatura da mensagem com a chave pública : h' = s^e (mod n)
+- o destinatário compara o hash gerado com o hash descriptografado : h == h' ?
