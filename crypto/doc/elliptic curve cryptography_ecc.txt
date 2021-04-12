@@ -1,0 +1,85 @@
+- ECC pode ser implementado em um criptosistema assimetrico: criptografia, assinatura e troca de chave.
+
+- velocidade nos processos
+
+- tamanho da chave
+192-bit (curve secp192r1)
+233-bit (curve sect233k1)
+224-bit (curve secp224k1)
+256-bit (curves secp256k1 and Curve25519)
+283-bit (curve sect283k1)
+384-bit (curves p384 and secp384r1)
+409-bit (curve sect409r1)
+414-bit (curve Curve41417)
+448-bit (curve Curve448-Goldilocks)
+511-bit (curve M-511)
+521-bit (curve P-521)
+571-bit (curve sect571k1)
+
+- algoritmos
+    ECC algoritmo de assinatura digital ECDSAe EdDSA
+    ECC algoritmo de criptografia ECIES e EEECC (EC-based ElGamal)
+    ECC troca de chave ECDH, X25519 and FHMQV
+
+#
+# ECDH Key Exchange
+#
+
+- ECDH (Elliptic Curve Diffie–Hellman Key Exchange)
+
+- (a * G) * b = (b * G) * a
+    - a e b sao dois numeros secretos, duas chaves privadas
+    - chave_publica_alice = (a * G) 
+    - chave publica_bob = (b * G)
+    - chave_secreta = (a * G) * b = (b * G) * a
+    - segredo = alicePubKey * bobPrivKey = bobPubKey * alicePrivKey
+
+- algoritmo ECDH
+    - Alice gera o par de chaves ECC de forma randômica - {alicePrivKey, alicePubKey = alicePrivKey * G}
+    - Bob gera o par de chaves ECC de forma randômica - {bobPrivKey, bobPubKey = bobPrivKey * G}
+
+    - Alice e Bob trocam as suas chaves públicas através de um canal não seguro
+    
+    - Alice calcula a chaveCompartilhamento = bobPubKey * alicePrivKey
+    - Bob calchla a chaveCompartilhamento = alicePubKey * bobPrivKey
+
+    - tanto Alice quanto Bob possuem a mensagem chaveCompartilhamento == bobPubKey * alicePrivKey == alicePubKey * bobPrivKey
+
+#
+# ECC Encryption / Decryption
+#
+
+- elliptic-curve based public-key encryption / decryption - envolve um esquema
+hibrido de criptografia, envolve esquema ECC de criptografia, ECDH de troca de
+chaves e algoritmo de chave simetrica para criptografia dos dados.
+
+- Será utilizado o par de chaves público/privada ECC.
+
+- criptografia dos dados com a chave publica
+
+- descriptografia dos dados com a chave privada
+
+- o esquema ECC não prove um sistema direto de criptografia. Para isso, será 
+utilizado um sistema híbrido a onde o esquema ECDH será utilizado para criar 
+e compartilhar a chaveCompartilhamento e a chaveCompartilhamento será utilizada
+para criptografar os dados.
+
+#
+# ECC-Based Secret Key Derivation (using ECDH)
+#
+
+- calcular EncryptionKey(pubKey) = (sharedECCKey, ciphertextPubKey)
+    - gerar ciphertextPrivKey = chave privada gerada de forma randômica
+    - calcular ciphertextPubKey = ciphertextPrivKey * G
+    - calcular a chaveCompartilhamento ECDH : sharedECCKey = pubKey * ciphertextPrivKey.
+
+    - compartilhar sharedECCKey + ciphertextPubKey
+    - a chave sharedECCKey será utilizada na criptografia simétrica
+    - utilizar a chave ciphertextPubKey para calcular a chave de descriptografia
+
+- calculateDecryptionKey(privKey, ciphertextPubKey) = sharedECCKey
+    - calcular a chaveCompartilhamento ECDH : sharedECCKey = ciphertextPubKey * privKey.
+    - utilizar a chaveCompartilhamento, sharedECCKey, para descriptografar os dados
+
+- pubKey * ciphertextPrivKey = ciphertextPubKey * privKey = sharedECCKey
+

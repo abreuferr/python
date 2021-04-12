@@ -1,1 +1,3 @@
-# códigos tirado do site https://cryptobook.nakov.com
+# fontes de informação
+ 
+códigos python - https://cryptobook.nakov.com
