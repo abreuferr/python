@@ -1,4 +1,4 @@
-#
+############################################################################
 # Key Derivation Functions (KDF)
 #
 
@@ -12,7 +12,7 @@ uma forma mais eficiente de se utilizar KDF é a utilização do algoritmo HMAC,
 
 Mais seguro que o HMAC, os algoritmos PBKDF2, Bcrypt, Scrypt e Argon2 podem ser utilizados.
 
-#
+############################################################################
 # PBKDF2
 #
 
@@ -31,7 +31,7 @@ na derivação interativa do HMAC muitas vezes com alguns preenchimentos.
 
 - o algoritmo não é resistente a ataque do tipo GPU e ASIC
 
-#
+############################################################################
 # Scrypt
 #
 
@@ -47,13 +47,13 @@ na derivação interativa do HMAC muitas vezes com alguns preenchimentos.
     p = paralelismo - afeta memória e cpu
     derived-key-len = tamanho da chave resultante do processo de derivação - 32 bytes/256 bits
 
-#
+############################################################################
 # Bcrypt
 #
 
 - menos resistente a ataques do tipo ASIC e GPU
 
-#
+############################################################################
 # Argon2
 #
 
