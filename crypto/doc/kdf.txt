@@ -2,11 +2,14 @@
 # Key Derivation Functions (KDF)
 #
 
+key derivation function = password -> key
+
 Key derivation function (KDF) eh uma funcao que transforma uma variavel cujo tamanho nao
 possui um valor fixo, como por exemplo, a senha em uma sequencia de tamanho fixo.
 
-uma foram de aplicar a funcao KDF sobre a senha eh a utilizacao do algoritmo HSA-256. Nao
-eh aconselhavel adotar esse algoritmo pois o SHA256 eh sucetivel ao ataque de discionário.
+uma forma de aplicar a funcao KDF sobre a senha eh a utilizacao do algoritmo HSA-256. Nao
+eh aconselhavel adotar esse algoritmo pois o SHA256 eh sucetivel a ataques do tipo força-bruta,
+ataque de dicionario e ataque do tipo rainbow table.
 
 uma forma mais eficiente de se utilizar KDF é a utilização do algoritmo HMAC, HMAC(salt,msg,SHA256).
 
@@ -21,15 +24,51 @@ Mais seguro que o HMAC, os algoritmos PBKDF2, Bcrypt, Scrypt e Argon2 podem ser 
 na derivação interativa do HMAC muitas vezes com alguns preenchimentos.
 
 - key = pbkdf2(password, salt, iterations-count, hash-function, derived-key-len)
-    - password = array de bites/string
-    - salt = sequencia aleatória de bytes
-    - iterations-count = número de interações
-    - hash-function = função hash, SHA256
-    - derived-key-len = tamanho da chave resultante
 
-- algoritmo é resistente a ataques do tipo dicionário e rainbow table.
+    - password = array de bites/string - tamanho minimo recomendado da senha seja entre 08 e 10 carcteres
+    - salt = sequencia aleatória de bytes gerada de forma segura - minimo de 64 bits mas o recomendado sao 128 bits
+    - iterations-count = número de interações - por exemplo 1024 interações
+    - hash-function = função hash para calcular o HMAC, por exemplo, SHA256
+    - derived-key-len = tamanho da chave resultante, como por exemplo 32 bytes/256 bits
 
-- o algoritmo não é resistente a ataque do tipo GPU e ASIC
+- a chave resultante é a derivada da chave e possui o tamanho de 256 bits
+
+- PBKDF2 permite configurar o número de iterações e assim configurar o tempo necessário 
+para derivar a chave. 
+    - Derivação de chave mais lenta significa alto tempo de login / descriptografia mais 
+    lenta / etc. e maior resistência a ataques de quebra de senha.
+    - Derivação de chave mais rápida significa tempo de login curto / descriptografia mais
+    rápida / etc. e menor resistência a ataques de quebra de senha.
+    - O PBKDF2 não é resistente a ataques de GPU (quebra de senha paralela usando placas de 
+    vídeo) e a ataques ASIC (hardware especializado em quebra de senha). Esta é a principal 
+    motivação por trás das funções KDF mais modernas.
+
+############################################################################
+# Algoritmos modernos de derivação de chave
+#
+
+PBKDF2 tem uma grande fraqueza: não é resistente a GPU e não é resistente a ASIC, porque 
+usa uma quantidade relativamente pequena de RAM e pode ser implementado com eficiência em 
+GPU (placas gráficas) ou ASIC (hardware especializado).
+
+As key-derivation functions(KDF) modernas como por exemplo Scrypt e Argon2 são projetadas 
+para serem resistentes a ataques de dicionário, ataques de GPU e ataques ASIC. Essas funções 
+derivam uma chave (de comprimento fixo) de uma senha (texto) e precisam de muita memória 
+(RAM), o que não permite cálculos paralelos rápidos em GPU ou hardware ASIC.
+
+Algoritmos como Bcrypt, Scrypt e Argon2 são considerados funções KDF mais seguras. Eles usam 
+salt + muitas iterações + muita CPU + muita memória RAM e isso torna muito difícil projetar 
+um hardware personalizado para acelerar significativamente o cracking de senha.
+
+Demora muito tempo de CPU para derivar a chave (por exemplo, 0,2 segundos) + muita memória 
+RAM (por exemplo, 1 GB). O processo de cálculo é dependente da memória, portanto o acesso à 
+memória é o gargalo dos cálculos. O acesso mais rápido à RAM irá acelerar os cálculos.
+
+Quando uma grande quantidade de CPU e RAM é usada para derivar a chave de uma senha fornecida, 
+a quebra de senhas é lenta e ineficiente (por exemplo, 5-10 tentativas / segundo), mesmo quando 
+se usa um hardware e software de quebra de senha muito bom. O objetivo das funções modernas do 
+KDF é tornar praticamente inviável a execução de um ataque de força bruta para reverter a senha 
+de seu hash.
 
 ############################################################################
 # Scrypt
@@ -37,7 +76,7 @@ na derivação interativa do HMAC muitas vezes com alguns preenchimentos.
 
 - descrição do algoritmo - RFC 7914
 
-- algoritmo resistente a ataques do tipo GPU, ASIC e FGPA
+- algoritmo resistente a ataques do tipo GPU, ASIC e FGPA devido ao uso intensivo de momória
 
 - key = Scrypt(password, salt, N, r, p, derived-key-len)
     password = senha
