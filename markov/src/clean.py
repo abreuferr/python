@@ -82,7 +82,7 @@ def main():
     """
     # Define the data directory path
     data_directory = "data"
-    output_file = "result.txt"  # Save in the same directory as the Python script
+    output_file = "clean_result.txt"  # Save in the same directory as the Python script
     
     print("Starting text processing...")
     print(f"Source directory: {data_directory}")
