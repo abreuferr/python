@@ -1,0 +1,44 @@
+Some Mathematicians Don’t Believe in Infinity
+
+One question has preoccupied humankind for thousands of years: Do infinities exist? More than 2,300 years ago Aristotle distinguished between two types of infinity: potential and actual. The former deals with abstract scenarios that would result from repeated processes. For example, if you were asked to imagine counting forever, adding 1 to the previous number, over and over again, this situation, in Aristotle’s view, would involve potential infinity. But actual infinities, the scholar argued, could not exist.
+
+Most mathematicians gave infinities a wide berth until the end of the 19th century. They were unsure of how to deal with these strange quantities. What results in infinity plus 1—or infinity times infinity? Then the German mathematician Georg Cantor put an end to these doubts. With set theory, he established the first mathematical theory that made it possible to deal with the immeasurable. Since then infinities have been an integral part of mathematics. At school, we learn about the sets of natural or real numbers, each of which is infinitely large, and we encounter irrational numbers, such as pi and the square root of 2, which have an infinite number of decimal places.
+
+Yet there are some people, so-called finitists, who reject infinity to this day. Because everything in our universe—including the resources to calculate things—seems to be limited, it makes no sense to them to calculate with infinities. And indeed, some experts have proposed an alternative branch of mathematics that relies only on finitely constructible quantities. Some are now even trying to apply these ideas to physics in the hope of finding better theories to describe our world.
+
+On supporting science journalism
+If you're enjoying this article, consider supporting our award-winning journalism by subscribing. By purchasing a subscription you are helping to ensure the future of impactful stories about the discoveries and ideas shaping our world today.
+
+Set Theory and Infinities
+Modern mathematics is based on set theory, which, as the name suggests, revolves around groupings or sets. You can think of a set as a bag into which you can put all kinds of things: numbers, functions or other entities. By comparing the contents of different bags, their size can be determined. So if I want to know whether one bag is fuller than another, I take out objects one at a time from each bag at the same time and see which empties first.
+
+That concept doesn’t sound particularly surprising. Even small children can grasp the basic principle. But Cantor realized that infinitely large quantities can be compared in this way. Using set theory, he came to the conclusion that there are infinities of different sizes. Infinity is not always the same as infinity; some infinities are larger than others.
+
+Mathematicians Ernst Zermelo and Abraham Fraenkel used set theory to give mathematics a foundation at the beginning of the 20th century. Before then subfields such as geometry, analysis, algebra and stochastics were largely in isolation from each other. Fraenkel and Zermelo formulated nine basic rules, known as axioms, on which the entire subject of mathematics is now based.
+
+One such axiom, for example, is the existence of the empty set: mathematicians assume that there is a set that contains nothing; an empty bag. Nobody questions this idea. But another axiom ensures that infinitely large sets also exist, which is where finitists draw a line. They want to build a mathematics that gets by without this axiom, a finite mathematics.
+
+The Dream of Finite Mathematics
+Finitists reject infinities not only because of the finite resources available to us in the real world. They are also bothered by counterintuitive results that can be derived from set theory. For example, according to the Banach-Tarski paradox, you can disassemble a sphere and then reassemble it into two spheres, each of which is as large as the original. From a mathematical point of view, it is no problem to double a sphere—but in reality, it is not possible.
+
+If the nine axioms allow such results, finitists argue, then something is wrong with the axioms. Because most of the axioms are seemingly intuitive and obvious, the finitists only reject the one that, in their view, contradicts common sense: the axiom on infinite sets.
+
+Their view can be expressed as follows: “a mathematical object only exists if it can be constructed from the natural numbers with a finite number of steps.” Irrational numbers, despite being reached with clear formulas, such as the square root of 2, consist of infinite sums and therefore cannot be part of finite mathematics.
+
+As a result, some logical principles no longer apply, including Aristotle’s theorem of the excluded middle, according to which a mathematical statement is always either true or false. In finitism, a statement can be indeterminate at a certain point in time if the value of a number has not yet been determined. For example, with statements that revolve around numbers such as 0.999..., if you carry out the full period and consider an infinite number of 9’s, the answer becomes 1. But if there is no infinity, this statement is simply wrong.
+
+A Finitistic World?
+Without the theorem of the excluded middle, all kinds of difficulties arise. In fact, many mathematical proofs are based on this very principle. It is no surprise, then, that only a few mathematicians have dedicated themselves to finitism. Rejecting infinities makes mathematics more complicated.
+
+And yet there are physicists who follow this philosophy, including Nicolas Gisin of the University of Geneva. He hopes that a finite world of numbers could describe our universe better than current modern mathematics. He bases his considerations on the idea that space and time can only contain a limited amount of information. Accordingly, it makes no sense to calculate with infinitely long or infinitely large numbers because there is no room for them in the universe.
+
+This effort has not yet progressed far. Nevertheless, I find it exciting. After all, physics seems to be stuck: the most fundamental questions about our universe, such as how it came into being or how the fundamental forces connect, have yet to be answered. Finding a different mathematical starting point could be worth a try. Moreover, it is fascinating to explore how far you can get in mathematics if you change or omit some basic assumptions. Who knows what surprises lurk in the finite realm of mathematics?
+
+In the end, it boils down to a question of faith: Do you believe in infinities or not? Everyone has to answer that for themselves.
+
+This article originally appeared in Spektrum der Wissenschaft and was reproduced with permission.
+
+IT'S TIME TO STAND UP FOR SCIENCE
+Before you close the page, we need to ask for your support. Scientific American has served as an advocate for science and industry for 180 years, and we think right now is the most critical moment in that two-century history.
+
+We’re not asking for charity. If you become a Digital, Print or Unlimited subscriber to Scientific American, you can help ensure that our coverage is centered on meaningful research and discovery; that we have the resources to report on the decisions that threaten labs across the U.S.; and that we support both future and working scientists at a time when the value of science itself often goes unrecognized. Click here to subscribe.

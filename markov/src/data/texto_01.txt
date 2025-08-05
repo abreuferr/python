@@ -1,0 +1,35 @@
+Em 2019, um fotógrafo que caminhava por montanhas no norte da China capturou a imagem de um inseto incomum: uma mosca que parecia estar disfarçada de abelha.
+
+O fotógrafo carregou a imagem no iNaturalist e atraiu a atenção de um entomologista. No ano seguinte, o entomologista publicou um artigo descrevendo o imitador de abelha como uma nova espécie.
+
+É um testemunho do poder da ciência cidadã —e não é um caso isolado, de acordo com um novo estudo, que documenta como cientistas estão aproveitando os dados do iNaturalist.
+
+Observações enviadas à plataforma, fundada em 2008, foram incorporadas em mais de 5.000 artigos revisados por pares, com referências explodindo nos últimos anos, segundo os cientistas. Mais de 1.400 desses artigos foram publicados em 2022, dez vezes mais do que apenas cinco anos antes e uma taxa de publicação de quase quatro estudos por dia.
+
+Os dados ajudaram cientistas a identificar novas espécies, rastrear a propagação de organismos invasores, localizar habitats críticos, prever os efeitos das mudanças climáticas e explorar o comportamento animal, entre outras coisas.
+
+"O iNaturalist é onipresente em toda a pesquisa de biodiversidade", disse o ecologista Corey Callaghan, da Universidade da Flórida (EUA), autor do artigo, que foi publicado na BioScience no último dia 28. "Ele está moldando a maneira como os cientistas pensam sobre pesquisa, sobre o design de estudos e sobre como responder a questões relacionadas à biodiversidade."
+
+Os usuários do iNaturalist enviam fotos ou gravações de áudio das plantas e animais que observam, junto com a data, hora e localização. Qualquer pessoa na comunidade iNaturalist pode sugerir uma identificação para o organismo observado. Se dois terços dessas sugestões concordarem, e a submissão passar pela revisão de qualidade de dados da plataforma, a observação é classificada como "grau de pesquisa" e enviada para um banco de dados global de biodiversidade disponível para cientistas.
+
+O surgimento da plataforma coincidiu com a ascensão dos smartphones equipados com câmeras e gravadores de áudio de alta qualidade. O conjunto de dados do iNaturalist cresceu exponencialmente nos últimos anos. Em 2024, já continha mais de 200 milhões de observações coletadas por 3,3 milhões de usuários.
+
+"Estamos vendo esse crescimento expressivo de dados, e isso está nos permitindo estudar coisas globalmente e por meio de muitos grupos taxonômicos, algo que seria desafiador com pequenos estudos profissionais", afirmou Brittany Mason, analista de gestão de dados na Universidade da Flórida e autora do estudo.
+
+Até maio de 2024, os pesquisadores haviam identificado 5.250 artigos que utilizaram dados do iNaturalist. Os artigos abrangiam observações de mais de 600 famílias de plantas, animais e fungos observados em 128 países.
+
+Em muitos artigos publicados, cientistas que se basearam em observações do iNaturalist analisaram dados básicos sobre a presença e a ausência de espécies específicas: onde e quando certas plantas e animais foram observados?
+
+Mas mesmo esses dados aparentemente simples podem esclarecer muitos processos e fenômenos diferentes. Em um artigo de 2023, por exemplo, pesquisadores usaram dados do iNaturalist para determinar que a área geográfica do jaguarundi, um gato selvagem latino-americano, não correspondia mais ao mapa elaborado por especialistas. Os felinos pareciam ter se retirado de alguns territórios anteriores na Argentina, Uruguai e Paraguai.
+
+O mesmo tipo de dados observacionais básicos foi usado para detectar a propagação de arbustos invasores em Nova York e Nova Jersey, documentar como mega incêndios na Austrália influenciaram a biodiversidade e prever como as mudanças climáticas podem afetar gibões criticamente ameaçados de extinção.
+
+Nos últimos anos, uma parcela crescente de artigos científicos foi além dos dados básicos de presença e ausência para analisar o conteúdo das fotos enviadas pelos usuários.
+
+"As imagens do iNaturalist são uma fonte de dados rica", afirmou Mason. "E parece que os pesquisadores estão começando a perceber isso." (O aprendizado de máquina também está tornando mais viável para os cientistas analisarem grandes coleções de imagens.)
+
+Pesquisadores utilizaram imagens do iNaturalist para analisar variações de cor em borboletas e serpentes, comparar as preferências de flores entre abelhas nativas e não nativas e documentar as dietas de aves nos Andes.
+
+Ainda assim, os autores enfatizam que os dados do iNaturalist, que possui várias limitações, nunca serão um substituto para observações de especialistas e biólogos de campo profissionalmente treinados. Os dados da plataforma podem complementar e acelerar a pesquisa que cientistas treinados estão realizando, disseram eles.
+
+E Callaghan quer que os usuários do iNaturalist saibam que o tempo e esforço que estão investindo está dando resultados. "Continuem fazendo o que estão fazendo e quem sabe onde o futuro nos levará com esses dados."
