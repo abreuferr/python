@@ -63,7 +63,7 @@ def main():
     """
     Main function to execute the vowel and consonant counting.
     """
-    filename = "clean_result.txt"
+    filename = "normalization_result.txt"
     
     print("Starting vowel and consonant count...")
     print(f"Reading from file: {filename}")

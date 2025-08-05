@@ -1,6 +1,4 @@
 import os
-import string
-import re
 
 def is_vowel_or_consonant(char):
     """
@@ -24,7 +22,7 @@ def process_files_in_directory(directory_path):
     and combine the results.
     """
     combined_result = []
-    
+   
     # Check if directory exists
     if not os.path.exists(directory_path):
         print(f"Directory '{directory_path}' does not exist.")
@@ -82,7 +80,7 @@ def main():
     """
     # Define the data directory path
     data_directory = "data"
-    output_file = "clean_result.txt"  # Save in the same directory as the Python script
+    output_file = "normalization_result.txt"  # Save in the same directory as the Python script
     
     print("Starting text processing...")
     print(f"Source directory: {data_directory}")
