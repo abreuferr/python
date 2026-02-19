@@ -1,56 +1,74 @@
+# -*- coding: utf-8 -*-
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
-# DESCRIÇÃO  : o programa deve encontrar o menor nome dentro de uma string
+# DESCRIÇÃO  : O programa encontra o menor nome dentro de uma lista de strings.
 
-def normalizacao(nomes):
-    # remover os espacos em branco dos nomes
-    array_auxiliar_1 = []
-    for caractere in nomes:
-        auxiliar = caractere.replace(' ','')
-        array_auxiliar_1.append(auxiliar)
+def normalizar(nomes: list[str]) -> list[str]:
+    """
+    Normaliza uma lista de nomes aplicando as seguintes transformações:
+      1. Remove espaços em branco extras nas bordas (strip).
+      2. Converte para letras minúsculas.
+      3. Capitaliza a primeira letra.
 
-    # substituir caracteres maiusculos por minusculos
-    # dos nomes
-    array_auxiliar_2 = []
-    for contador in array_auxiliar_1:
-        nome_minusculo = contador.lower()
-        array_auxiliar_2.append(nome_minusculo)
+    Parâmetros:
+        nomes (list[str]): lista de nomes a normalizar.
 
-    # substituir a primeira letra do nome por maiuscula
-    array_auxiliar_3 = []
-    for contador in array_auxiliar_2:
-        nome_maiuscula = contador.capitalize()
-        array_auxiliar_3.append(nome_maiuscula)
+    Retorna:
+        list[str]: lista de nomes normalizados.
 
-    return array_auxiliar_3
+    Exemplo:
+        normalizar(['  MARIA ', 'josé']) -> ['Maria', 'José']
+    """
+    # strip() remove espaços no início e no fim; capitalize() ajusta as maiúsculas
+    # tudo em uma única passagem com list comprehension
+    return [nome.strip().capitalize() for nome in nomes]
 
-# funcao utilizada para encontrar o menor nome
-def menor_nome(nomes):
-    tamanho_menor_nome = 1000
-    tamanho_nome = 0 
 
-    # chamando funcao para normalizar os nomes
-    nomes_normalizados = normalizacao(nomes)
+def menor_nome(nomes: list[str]) -> str:
+    """
+    Encontra e retorna o menor nome (em número de caracteres) de uma lista.
+    Em caso de empate, retorna o primeiro nome encontrado com aquele tamanho.
 
-    for nome in nomes_normalizados: # varrer o array com os nomes
-        tamanho_nome = len(nome) # extrair no tamanho de cada nome
+    Parâmetros:
+        nomes (list[str]): lista de nomes (podem conter espaços extras e
+                           letras maiúsculas/minúsculas misturadas).
 
-        if tamanho_menor_nome > tamanho_nome:
-            menor_nome = nome
-            tamanho_menor_nome = tamanho_nome
+    Retorna:
+        str: o menor nome normalizado.
 
-    return menor_nome
+    Levanta:
+        ValueError: se a lista estiver vazia.
 
-# deve devolver 'Ito'
-nomes = ['maria', 'josé', 'PAULO', 'Catarina']
-menor_nome(nomes)
+    Exemplos:
+        menor_nome(['maria', 'josé', 'PAULO', 'Catarina']) -> 'José'
+        menor_nome(['LU   ', ' josé ', 'PAULO', 'Catarina']) -> 'Lu'
+    """
+    # garante que a lista não está vazia antes de processar
+    if not nomes:
+        raise ValueError("A lista de nomes não pode estar vazia.")
 
-# deve devolver 'José'
-nomes = ['maria', ' josé ', '   PAULO', 'Catarina   ']
-menor_nome(nomes)
+    # normaliza os nomes antes de comparar
+    nomes_normalizados = normalizar(nomes)
 
-# deve devolver José
-nomes = ['LU   ', ' josé ', 'PAULO', 'Catarina']
-menor_nome(nomes)
+    # min() com key=len encontra o nome de menor comprimento de forma eficiente,
+    # sem necessidade de variáveis auxiliares de controle manual
+    return min(nomes_normalizados, key=len)
 
-nomes = ['zé', ' lu', 'fê']
-menor_nome(nomes)
+
+def main():
+    # cada caso de teste exibe a lista de entrada e o menor nome encontrado
+    casos = [
+        ['maria', 'josé', 'PAULO', 'Catarina'],       # esperado: 'José'
+        ['maria', ' josé ', '   PAULO', 'Catarina '],  # esperado: 'José'
+        ['LU   ', ' josé ', 'PAULO', 'Catarina'],      # esperado: 'Lu'
+        ['zé', ' lu', 'fê'],                           # esperado: 'Zé' (empate, retorna o primeiro)
+    ]
+
+    for nomes in casos:
+        resultado = menor_nome(nomes)
+        print(f"Entrada : {nomes}")
+        print(f"Resultado: {resultado}\n")
+
+
+# garante que main() só é executada quando o script é rodado diretamente
+if __name__ == "__main__":
+    main()

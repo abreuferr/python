@@ -1,60 +1,120 @@
-# autor : caio abreu ferreira
-# objetivo : calcular os valores de x em uma equacao do segundo grau (ax**2+bx+c=0)
+"""
+AUTOR      : Caio Abreu Ferreira <abreuferr (a) gmail.com>
+TÍTULO     : Equação do segundo grau (ax² + bx + c = 0)
+SOBRE       : Calcula as raízes reais de uma equação quadrática usando a Fórmula de Bhaskara.
 
-# importando o modulo math
-#
+Fórmulas:
+    Δ  = b² - 4ac
+    x  = (-b ± √Δ) / (2a)
+
+Casos possíveis:
+    Δ > 0  →  duas raízes reais distintas (x1 e x2)
+    Δ = 0  →  uma raiz real dupla (x1 = x2)
+    Δ < 0  →  nenhuma raiz real (raízes complexas)
+"""
+
 import math
 
-# funcao delta
-#
-def delta(valorA, valorB, valorC):
-    # calcular o valor do delta e retornar o valor
-    #
-    valorDelta = (valorB ** 2) - (4 * valorA*valorC)
-    return valorDelta
 
-# funcao calcularx
-#
-def calcularx(valorA, valorB, valorDelta):
-    # calcular o valor de X1 e X2 e retornar os valores
-    #
-    valorX1 = (-valorB + math.sqrt(valorDelta)) / (2 * valorA)
-    valorX2 = (-valorB - math.sqrt(valorDelta)) / (2 * valorA)
-    return valorX1, valorX2
+# ── Funções ──────────────────────────────────────────────────────────────────
 
-# exibir o formato de uma equacao de segundo grau
-#
-print("axˆ2+bx+c=0")
+def calcular_delta(a: float, b: float, c: float) -> float:
+    """
+    Calcula o discriminante (Δ) da equação quadrática ax² + bx + c = 0.
 
-# coleta dos dados
-#
-valorA = float(input("Favor inserir o valor de A : "))
-valorB = float(input("Favor inserir o valor de B : "))
-valorC = float(input("Favor inserir o valor de C : "))
+    Parâmetros:
+        a, b, c (float): Coeficientes da equação.
 
-# calcular o valor do delta atraves da funcao DELTA
-#
-valorDelta = delta(valorA, valorB, valorC)
+    Retorna:
+        float: Valor do discriminante Δ = b² - 4ac.
 
-# valor do delta igual a zero
-#
-if valorDelta == 0:
-    # calcular o valor de X1 e exibir o resultado
-    #
-    valorX1 = calcularx(valorA, valorB, valorDelta)
-    print("A única raiz é : ", valorX1)
+    Exemplo:
+        >>> calcular_delta(1, -5, 6)
+        1.0
+    """
+    return b ** 2 - 4 * a * c
 
-# valor do delta é menor que zero
-#
-elif valorDelta < 0:
-    print("Esta equacao nao possui raizes reais")
 
-# valor do delta é maior que zero
-#
-else:
-    # calcular os valores de X1 e X2 e exibir o resultado
-    #
-    valorX1 = calcularx(valorA, valorB, valorDelta)
-    valorX2 = calcularx(valorA, valorB, valorDelta)
-    print("Valor de x1 é : ", valorX1)
-    print("Valor de x2 é : ", valorX2)
+def calcular_raizes(a: float, b: float, delta: float) -> tuple[float, float]:
+    """
+    Calcula as duas raízes reais pela Fórmula de Bhaskara.
+
+    Deve ser chamada apenas quando delta >= 0.
+
+    Parâmetros:
+        a     (float): Coeficiente quadrático (≠ 0).
+        b     (float): Coeficiente linear.
+        delta (float): Discriminante pré-calculado (deve ser ≥ 0).
+
+    Retorna:
+        tuple[float, float]: Par (x1, x2) com x1 ≥ x2.
+        Quando delta == 0, x1 == x2 (raiz dupla).
+
+    Exemplos:
+        >>> calcular_raizes(1, -5, 1)   # delta = b²-4ac = 25-24 = 1
+        (3.0, 2.0)                       # x = (5 ± 1) / 2
+    """
+    raiz_delta = math.sqrt(delta)
+    x1 = (-b + raiz_delta) / (2 * a)
+    x2 = (-b - raiz_delta) / (2 * a)
+    return x1, x2
+
+
+def coletar_coeficiente(nome: str) -> float:
+    """
+    Solicita ao usuário um coeficiente numérico, repetindo até entrada válida.
+
+    Parâmetros:
+        nome (str): Nome do coeficiente exibido no prompt (ex: 'a', 'b', 'c').
+
+    Retorna:
+        float: Valor numérico informado pelo usuário.
+    """
+    while True:
+        try:
+            return float(input(f"  Valor de {nome}: "))
+        except ValueError:
+            print(f"  Entrada inválida. '{nome}' deve ser um número. Tente novamente.")
+
+
+# ── Execução principal ───────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    print("=== EQUAÇÃO DO SEGUNDO GRAU ===")
+    print("       ax² + bx + c = 0\n")
+
+    # Coleta os coeficientes com validação de entrada
+    while True:
+        a = coletar_coeficiente("a")
+        if a != 0:
+            break
+        print("  O coeficiente 'a' não pode ser zero (seria equação linear).\n")
+
+    b = coletar_coeficiente("b")
+    c = coletar_coeficiente("c")
+
+    # Exibe a equação montada com os valores fornecidos
+    print(f"\nEquação: ({a})x² + ({b})x + ({c}) = 0")
+
+    # Calcula o discriminante
+    delta = calcular_delta(a, b, c)
+    print(f"Δ = {b}² - 4×{a}×{c} = {delta:.4f}\n")
+
+    # Analisa o valor de delta e exibe o resultado correspondente
+    if delta > 0:
+        # Duas raízes reais distintas
+        x1, x2 = calcular_raizes(a, b, delta)
+        print("Duas raízes reais distintas:")
+        print(f"  x1 = {x1:.4f}")
+        print(f"  x2 = {x2:.4f}")
+
+    elif delta == 0:
+        # Uma raiz real dupla (x1 == x2)
+        x1, _ = calcular_raizes(a, b, delta)
+        print("Uma raiz real dupla:")
+        print(f"  x1 = x2 = {x1:.4f}")
+
+    else:
+        # Delta negativo: raízes complexas (sem solução no conjunto dos reais)
+        print("Nenhuma raiz real.")
+        print(f"  Δ = {delta:.4f} < 0 → raízes complexas (não reais).")

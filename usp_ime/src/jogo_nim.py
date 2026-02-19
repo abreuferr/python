@@ -1,6 +1,5 @@
 # AUTORES    : Caio Abreu Ferreira <abreuferr (a) gmail.com>
 # DESCRICAO  : jogo do NIM
-# OBS : https://www.coursera.org/learn/ciencia-computacao-python-conceitos/programming/yEPxE/programa-completo-jogo-do-nim
 
 # funcao usuario()
 def usuario_escolhe_jogada(n,m):
