@@ -16,7 +16,7 @@ def compress_point(point):
 
 # funcao utilizada para calcular a encryptio_key
 def ecc_calc_encryption_keys(pubKey):
-    ciphertextPrivKey = secrets.randbelow(curve.field.n)
+    ciphertextPrivKey = secrets.randbelow(curve.field.n - 1) + 1
     ciphertextPubKey = ciphertextPrivKey * curve.g
     sharedECCKey = pubKey * ciphertextPrivKey
     return (sharedECCKey, ciphertextPubKey)
@@ -26,9 +26,9 @@ def ecc_calc_decryption_key(privKey, ciphertextPubKey):
     sharedECCKey = ciphertextPubKey * privKey
     return sharedECCKey
 
-privKey = secrets.randbelow(curve.field.n)
+privKey = secrets.randbelow(curve.field.n - 1) + 1
 pubKey = privKey * curve.g
-print("private key:", hex(privKey))
+print("private key (demo only):", hex(privKey))
 print("public key:", compress_point(pubKey))
 
 (encryptKey, ciphertextPubKey) = ecc_calc_encryption_keys(pubKey)

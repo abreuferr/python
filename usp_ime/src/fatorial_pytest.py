@@ -13,7 +13,7 @@ def fatorial(numero):
 
     while (valor <= numero):
         fat = fat * valor
-        valor -= 1
+        valor += 1
     return fat
 
 # teste da funcao fatorial
@@ -25,5 +25,5 @@ def fatorial(numero):
     (4, 24),
     ])
 
-def testa_fatorial0(entrada, esperada):
+def test_fatorial(entrada, esperada):
     assert fatorial(entrada) == esperada

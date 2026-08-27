@@ -7,6 +7,8 @@
 # importando biblioteca
 from tinyec import registry
 
+# `secp192r1` é mantida aqui como exemplo histórico; seus ~96 bits de segurança
+# não são recomendados para novos sistemas. Veja também as curvas de 256 bits.
 curve = registry.get_curve('secp192r1')
 print('curve:', curve)
 

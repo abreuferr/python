@@ -40,7 +40,7 @@ class Bhaskara:
             >>> Bhaskara().delta(1, 2, 1)
             0.0
         """
-        return b ** 2 - 4 * a * c
+        return float(b ** 2 - 4 * a * c)
 
     # ── Resolução das raízes ─────────────────────────────────────────────────
 

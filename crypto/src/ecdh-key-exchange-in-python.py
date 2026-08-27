@@ -15,14 +15,14 @@ def compress(pubKey):
 curve = registry.get_curve('brainpoolP256r1')
 
 # calculando as chaves publicas e privadas de Alice
-alicePrivKey = secrets.randbelow(curve.field.n) # 256 bits
+alicePrivKey = secrets.randbelow(curve.field.n - 1) + 1 # 256 bits; zero é inválido
 alicePubKey = alicePrivKey * curve.g # 257 bits
 
 # exibindo a chave publica de Alice
 print("Alice public key:", compress(alicePubKey))
 
 # caclculando as chaves publicas e privadas de Bob
-bobPrivKey = secrets.randbelow(curve.field.n) # 256 bits
+bobPrivKey = secrets.randbelow(curve.field.n - 1) + 1 # 256 bits; zero é inválido
 bobPubKey = bobPrivKey * curve.g # 257 bits
 
 # exibindo a chave publica de Bob

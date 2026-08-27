@@ -1,3 +1,8 @@
+# ATENÇÃO DIDÁTICA: este arquivo mostra a operação RSA crua (s = h^d mod n).
+# Ela NÃO constitui uma assinatura digital segura e a chave de 1024 bits também
+# não é adequada para novos sistemas. Em produção, use RSA-PSS e chaves >= 2048
+# bits por meio de uma biblioteca, nunca `pow()` diretamente.
+#
 # antes de executar o código abaixo, é necessário importar
 # o pacote pycryptodome no python. para isso, basta
 # executar o comando abaixo.

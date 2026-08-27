@@ -28,7 +28,7 @@ def ecc_point_to_256_bit_key(point):
 curve = registry.get_curve('brainpoolP256r1')
 
 def encrypt_ECC(msg, pubKey):
-    ciphertextPrivKey = secrets.randbelow(curve.field.n)
+    ciphertextPrivKey = secrets.randbelow(curve.field.n - 1) + 1
     sharedECCKey = ciphertextPrivKey * pubKey
     secretKey = ecc_point_to_256_bit_key(sharedECCKey)
     ciphertext, nonce, authTag = encrypt_AES_GCM(msg, secretKey)
@@ -44,7 +44,7 @@ def decrypt_ECC(encryptedMsg, privKey):
 msg = b'Text to be encrypted by ECC public key and ' \
       b'decrypted by its corresponding ECC private key'
 print("original msg:", msg)
-privKey = secrets.randbelow(curve.field.n)
+privKey = secrets.randbelow(curve.field.n - 1) + 1
 pubKey = privKey * curve.g
 
 encryptedMsg = encrypt_ECC(msg, pubKey)

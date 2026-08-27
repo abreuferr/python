@@ -4,7 +4,7 @@
 #
 # pip install pycoin
 
-from pycoin.ecdsa import generator_secp256k1, sign, verify
+from pycoin.ecdsa.secp256k1 import secp256k1_generator
 import hashlib, secrets
 
 def sha3_256Hash(msg):
@@ -13,24 +13,26 @@ def sha3_256Hash(msg):
 
 def signECDSAsecp256k1(msg, privKey):
     msgHash = sha3_256Hash(msg)
-    signature = sign(generator_secp256k1, privKey, msgHash)
+    signature = secp256k1_generator.sign(privKey, msgHash)
     return signature
 
 def verifyECDSAsecp256k1(msg, signature, pubKey):
     msgHash = sha3_256Hash(msg)
-    valid = verify(generator_secp256k1, pubKey, msgHash, signature)
+    valid = secp256k1_generator.verify(pubKey, msgHash, signature)
     return valid
 
 # assinatura da mensagem utilizando ECDSA utilizando a curva secp256k1 e hash SHA3-256
 msg = "Message for ECDSA signing"
-privKey = secrets.randbelow(generator_secp256k1.order())
+# O zero não é uma chave privada ECDSA válida.
+privKey = secrets.randbelow(secp256k1_generator.order() - 1) + 1
 signature = signECDSAsecp256k1(msg, privKey)
 print("Message:", msg)
-print("Private key:", hex(privKey))
+print("Private key (demo only):", hex(privKey))
 print("Signature: r=" + hex(signature[0]) + ", s=" + hex(signature[1]))
 
 # verificando a assinatura utilizando ECDSA utilizando secp256k1 e hash SHA3-256
-pubKey = (generator_secp256k1 * privKey).pair()
+pub_key_point = secp256k1_generator * privKey
+pubKey = (pub_key_point[0], pub_key_point[1])
 valid = verifyECDSAsecp256k1(msg, signature, pubKey)
 print("\nMessage:", msg)
 print("Public key: (" + hex(pubKey[0]) + ", " + hex(pubKey[1]) + ")")

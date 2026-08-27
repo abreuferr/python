@@ -1,3 +1,7 @@
+# ATENÇÃO DIDÁTICA: AES-CTR provê apenas confidencialidade. Sem um MAC/AEAD, um
+# ciphertext pode ser alterado sem detecção. Compare este exemplo com AES-GCM;
+# não use CTR isoladamente para dados reais.
+#
 # antes de executar o código abaixo, é necessário importar
 # os pacotes pyaes e pbkdf2 no python. para isso, basta
 # executar o comando abaixo.
