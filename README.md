@@ -16,7 +16,7 @@ pip install -r requirements.txt
 Com as dependências de estudo instaladas, execute:
 
 ```sh
-python validate.py
+python scripts/validate.py
 ```
 
 O comando valida a sintaxe de todos os scripts e executa os testes automatizados

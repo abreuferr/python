@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 EXCLUDED_DIRECTORIES = {".git", ".venv", "venv", "__pycache__"}
 PYTEST_TARGETS = (
     "usp_ime/src/bhaskara_test.py",
